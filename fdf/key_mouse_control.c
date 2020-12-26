@@ -14,18 +14,18 @@
 
 void	img_changes(int key, t_cntrl *cntrl)
 {
-	if ((key >= 123 && key <= 126) || (key == 0 || key == 2))
+	if ((key >= 0xff51 && key <= 0xff54) || (key == 0x0061 || key == 0x0064))
 		rotation(cntrl, key);
-	if (key == 24 || key == 27)
+	if (key == 0x003d || key == 0x002d)
 		scale(cntrl, key);
-	if (key == 34 || key == 38 || key == 40 || key == 37)
+	if (key == 0x0069 || key == 0x006a || key == 0x006b || key == 0x006c)
 		move(cntrl, key);
-	if (key == 6)
+	if (key == 0x007a)
 	{
 		parallel_coor(cntrl);
 		find_center(cntrl);
 	}
-	if (key == 7)
+	if (key == 0x0078)
 	{
 		make_3d(cntrl);
 		find_center(cntrl);
@@ -34,17 +34,17 @@ void	img_changes(int key, t_cntrl *cntrl)
 
 void	color_changes(int key, t_cntrl *cntrl)
 {
-	if (key == 18)
+	if (key == 0x0031)
 	{
 		cntrl->color = MINT;
 		cntrl->end_color = RED;
 	}
-	if (key == 19)
+	if (key == 0x0032)
 	{
 		cntrl->color = MARS;
 		cntrl->end_color = IVORY;
 	}
-	if (key == 20)
+	if (key == 0x0033)
 	{
 		cntrl->color = INDIGO;
 		cntrl->end_color = MARS;
@@ -53,15 +53,15 @@ void	color_changes(int key, t_cntrl *cntrl)
 
 int		key_control(int key, t_cntrl *cntrl)
 {
-	if (key == 53)
+	if (key == 0xff1b)
 	{
 		mlx_destroy_window(cntrl->mlx, cntrl->win);
 		cleanup(cntrl);
 		exit(EXIT_SUCCESS);
 	}
-	if ((key >= 123 && key <= 126) || key == 18 || key == 19 || key == 20 || \
-		key == 0 || key == 2 || key == 6 || key == 7 || key == 24 || key == 27 \
-		|| key == 34 || key == 38 || key == 40 || key == 37)
+	if ((key >= 0xff51 && key <= 0xff54) || key == 0x0031 || key == 0x0032 || key == 0x0033 || \
+		key == 0x0061 || key == 0x0064 || key == 0x007a || key == 0x0078 || key == 0x003d || key == 0x002d \
+		|| key == 0x006b || key == 0x006a || key == 0x0069 || key == 0x006c)
 	{
 		if (cntrl->img)
 			mlx_destroy_image(cntrl->mlx, cntrl->img);

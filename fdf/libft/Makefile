@@ -29,7 +29,7 @@ OBJ = $(subst .c,.o,$(SRC))
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) -c $(SRC) -I $(INCLUDES)
+	gcc $(FLAGS) -c $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 

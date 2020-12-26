@@ -21,8 +21,8 @@
 # include "error.h"
 # include "libft.h"
 
-# define WID	2000
-# define HEI	1500
+# define WID	1920
+# define HEI	1080
 
 # define INDIGO	0x4B0082
 # define MARS	0xD54418

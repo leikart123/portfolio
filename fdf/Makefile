@@ -11,10 +11,9 @@
 # **************************************************************************** #
 
 NAME = fdf
-FLAGS = -Wall -Wextra
+FLAGS = -Wall -Wextra -lX11 -lXext -lm
 #-lmlx -lX11 -lXext -lm for linux
-#-lmlx -framework OpenGL -framework AppKit for mac
-LIBRARY = libft/libft.a
+LIBRARY = libft/libft.a minilibx-linux/libmlx_Linux.a
 HEADER = fdf.h
 SRC = fdf.c get_next_line.c key_mouse_control.c map_changes.c map_read.c \
 		map_settings.c matrix_manipulations.c points_output.c projections.c \
@@ -30,7 +29,7 @@ $(LIBRARY):
 		@make -C libft/
 
 $(NAME): $(LIBRARY) $(OBJ)
-		@gcc $(OBJ) $(LIBRARY) -o $(NAME) -I $(HEADER) -lmlx -framework OpenGL -framework AppKit -L.
+		@gcc $(OBJ) $(LIBRARY) -o $(NAME) -I $(HEADER) -L. $(FLAGS)
 
 clean:
 	@rm -f $(OBJ)

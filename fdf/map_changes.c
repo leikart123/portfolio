@@ -19,13 +19,13 @@ void	move(t_cntrl *cntrl, int key)
 	i = 0;
 	while (i < cntrl->nmb_op)
 	{
-		if (key == 34)
+		if (key == 0x0069)
 			cntrl->points[i].y -= 10;
-		if (key == 40)
+		if (key == 0x006b)
 			cntrl->points[i].y += 10;
-		if (key == 38)
+		if (key == 0x006a)
 			cntrl->points[i].x -= 10;
-		if (key == 37)
+		if (key == 0x006c)
 			cntrl->points[i].x += 10;
 		i++;
 	}
@@ -39,10 +39,10 @@ void	scale(t_cntrl *cntrl, int key)
 	i = 0;
 	while (i < cntrl->nmb_op)
 	{
-		if (key == 24)
+		if (key == 0x003d)
 			cntrl->points[i] = change_scale(cntrl->points[i], '+', \
 				cntrl->dx, cntrl->dy);
-		if (key == 27)
+		if (key == 0x002d)
 			cntrl->points[i] = change_scale(cntrl->points[i], '-', \
 				cntrl->dx, cntrl->dy);
 		i++;
@@ -56,18 +56,18 @@ void	rotation(t_cntrl *cntrl, int key)
 	i = 0;
 	while (i < cntrl->nmb_op)
 	{
-		if (key == 123)
+		if (key == 0xff51)
 			cntrl->points[i] = rotate_y(cntrl->points[i], -0.05, cntrl->dx);
-		if (key == 126)
+		if (key == 0xff52)
 			cntrl->points[i] = rotate_x(cntrl->points[i], -0.05, cntrl->dy);
-		if (key == 124)
+		if (key == 0xff53)
 			cntrl->points[i] = rotate_y(cntrl->points[i], 0.05, cntrl->dx);
-		if (key == 125)
+		if (key == 0xff54)
 			cntrl->points[i] = rotate_x(cntrl->points[i], 0.05, cntrl->dy);
-		if (key == 0)
+		if (key == 0x0061)
 			cntrl->points[i] = rotate_z(cntrl->points[i], -0.05, cntrl->dx, \
 				cntrl->dy);
-		if (key == 2)
+		if (key == 0x0064)
 			cntrl->points[i] = rotate_z(cntrl->points[i], 0.05, cntrl->dx, \
 				cntrl->dy);
 		i++;
