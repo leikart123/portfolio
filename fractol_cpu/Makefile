@@ -12,9 +12,9 @@
 
 NAME = fractol
 FLAGS = -Wall -Wextra -Werror
-LIBRARY = libft/libft.a
+LIBRARY = libft/libft.a minilibx/libmlx_Linux.a
 HEADER = fractol.h
-FLAGS_LINUX = -lmlx -lX11 -lXext -lm -pthread -L.
+FLAGS_LINUX = -lX11 -lXext -lm -pthread -L.
 SRC = fractol.c key_mouse_control.c draw.c image_changes.c \
 image_utils.c init.c color.c args_parse.c hyper.c threads.c \
 change_fractal.c draw_calc.c draw_norme.c
@@ -26,9 +26,9 @@ $(LIBRARY):
 		@make -C libft/
 
 $(OBJ): %.o: %.c fractol.h
-		gcc -c $(FLAGS) -I libft/ -I $(HEADER) -o $@ $<
+		gcc -c $(FLAGS) -I libft/ -o $@ $<
 $(NAME): $(LIBRARY) $(OBJ)
-		@gcc $(OBJ) $(LIBRARY) -o $(NAME) $(FLAGS) -I $(HEADER) -lmlx -framework OpenGL -framework AppKit -pthread
+		@gcc $(OBJ) $(LIBRARY) -o $(NAME) $(FLAGS) -lX11 -lXext -lm -pthread -L.
 clean:
 	@rm -f *.o
 	@make -C libft clean

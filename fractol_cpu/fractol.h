@@ -12,7 +12,7 @@
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
-# define THREAD_NUM	4
+# define THREAD_NUM	8
 # define WID		1024
 # define HEI		1024
 # define PI			3.1415

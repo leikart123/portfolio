@@ -29,12 +29,12 @@ void	set_minimum(t_image_data *img_d)
 
 void	choose_color(int key, t_image_data *img_d)
 {
-	if (key == 12)
+	if (key == 0x0071)
 		img_d->palett_type = 1;
-	if (key == 13)
+	if (key == 0x0077)
 		img_d->palett_type = 2;
-	if (key == 14)
+	if (key == 0x0065)
 		img_d->palett_type = 3;
-	if (key == 15)
+	if (key == 0x0072)
 		img_d->palett_type = 4;
 }

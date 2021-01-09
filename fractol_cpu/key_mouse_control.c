@@ -64,18 +64,18 @@ int		mouse_press(int button, int x, int y, t_mlx_data *cmd)
 
 int		key_control(int key, t_mlx_data *cmd)
 {
-	if (key == 53)
+	if (key == 0xff1b)
 	{
 		mlx_destroy_window(cmd->mlx, cmd->win);
 		exit(0);
 	}
-	if (key == 257)
+	if (key == 0xffe1)
 		cmd->mouse_locked = cmd->mouse_locked ? 0 : 1;
-	if (key == 18 || key == 19 || key == 20 || key == 21 || \
-		key == 23 || key == 22 || key == 24 || \
-		key == 13 || key == 14 || key == 15 || key == 125 || \
-		key == 126 || key == 124 || key == 123 || key == 24 || \
-		key == 27 || key == 12)
+	if (key == 0x0036 || key == 0x0031 || key == 0x0032 ||\
+		key == 0x0033 || key == 0x0034 || key == 0x0035 || \
+		key == 0xff52 || key == 0xff51 || key == 0xff53 || key == 0xff54 ||\
+		key == 0x003d || key == 0x002d || key == 0x0071 || key == 0x0077 || \
+		key == 0x0065 || key == 0x0072)
 	{
 		get_new_image(cmd);
 		img_changes(key, cmd, cmd->img_data);

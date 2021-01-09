@@ -65,12 +65,10 @@ void	thread_init(t_image_data *img_d)
 {
 	pthread_t		tid[THREAD_NUM];
 	int				i;
-	int				j;
 	t_image_data	**img_buf;
 
 	img_d->max_y = 100;
 	i = 1;
-	j = 0;
 	img_buf = malloc(sizeof(t_image_data *) * THREAD_NUM);
 	set_minimum(img_d);
 	while (i <= THREAD_NUM)

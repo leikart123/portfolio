@@ -14,7 +14,7 @@
 
 void	change_fractal_norm(int key, t_image_data *img_d)
 {
-	if (key == 21)
+	if (key == 0x0034)
 	{
 		img_d->fractal_num = 4;
 		img_d->zoom = 100;
@@ -22,7 +22,7 @@ void	change_fractal_norm(int key, t_image_data *img_d)
 		img_d->y_pos = 0;
 		img_d->maxiter = 100;
 	}
-	if (key == 23)
+	if (key == 0x0035)
 	{
 		img_d->fractal_num = 5;
 		img_d->zoom = 100;
@@ -30,7 +30,7 @@ void	change_fractal_norm(int key, t_image_data *img_d)
 		img_d->y_pos = 0;
 		img_d->maxiter = 100;
 	}
-	if (key == 22)
+	if (key == 0x0036)
 	{
 		img_d->fractal_num = 6;
 		img_d->zoom = 200;
@@ -42,7 +42,7 @@ void	change_fractal_norm(int key, t_image_data *img_d)
 
 void	change_fractal(int key, t_image_data *img_d)
 {
-	if (key == 18)
+	if (key == 0x0031)
 	{
 		img_d->fractal_num = 1;
 		img_d->zoom = 240;
@@ -50,7 +50,7 @@ void	change_fractal(int key, t_image_data *img_d)
 		img_d->y_pos = 0;
 		img_d->maxiter = 100;
 	}
-	if (key == 19)
+	if (key == 0x0032)
 	{
 		img_d->fractal_num = 2;
 		img_d->zoom = 260;
@@ -58,7 +58,7 @@ void	change_fractal(int key, t_image_data *img_d)
 		img_d->y_pos = 0;
 		img_d->maxiter = 100;
 	}
-	if (key == 20)
+	if (key == 0x0033)
 	{
 		img_d->fractal_num = 3;
 		img_d->zoom = 240;

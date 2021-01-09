@@ -14,9 +14,9 @@
 
 void	iter_change(int key, t_image_data *img_d)
 {
-	if (key == 24)
+	if (key == 0x003d)
 		img_d->maxiter += 50;
-	if (key == 27)
+	if (key == 0x002d)
 		img_d->maxiter -= 50;
 	if (img_d->maxiter <= 0)
 		img_d->maxiter = 50;
@@ -27,25 +27,25 @@ void	move(t_mlx_data *cmd, int key, t_image_data *img_d)
 	double step;
 
 	step = 50;
-	if (key == 125)
+	if (key == 0xff54)
 		cmd->img_data->y_pos += step;
-	if (key == 126)
+	if (key == 0xff52)
 		img_d->y_pos -= step;
-	if (key == 124)
+	if (key == 0xff51)
 		img_d->x_pos += step;
-	if (key == 123)
+	if (key == 0xff53)
 		img_d->x_pos -= step;
 }
 
 void	img_changes(int key, t_mlx_data *cmd, t_image_data *img_d)
 {
-	if (key == 24 || key == 27)
+	if (key == 0x003d || key == 0x002d)
 		iter_change(key, img_d);
-	if (key == 123 || key == 124 || key == 125 || key == 126)
+	if (key == 0xff52 || key == 0xff54 || key == 0xff51 || key == 0xff53)
 		move(cmd, key, img_d);
-	if (key == 18 || key == 19 || key == 20 ||\
-	key == 21 || key == 22 || key == 23)
+	if (key == 0x0036 || key == 0x0031 || key == 0x0032 ||\
+	key == 0x0033 || key == 0x0034 || key == 0x0035)
 		change_fractal(key, img_d);
-	if (key == 12 || key == 13 || key == 14 || key == 15)
+	if (key == 0x0071 || key == 0x0077 || key == 0x0065 || key == 0x0072)
 		choose_color(key, img_d);
 }
