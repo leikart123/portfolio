@@ -3,5 +3,5 @@ FDF is a 42 Project to learn about 3d programming. The program takes a map as pa
 You can rotate, increase altitude coefficient and zoom in/out.<br>
 <h2>Installation</h2><br>
 make<br>
-./fdf map.fdf
-![screenshot of sample](https://raw.githubusercontent.com/leikart123/portfolio/master/fdf/screen/2.png)
+./fdf map.fdf<br>
+![screenshot](https://raw.githubusercontent.com/leikart123/portfolio/master/fdf/screen/2.png)
