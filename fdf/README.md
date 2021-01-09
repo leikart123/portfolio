@@ -4,3 +4,4 @@ You can rotate, increase altitude coefficient and zoom in/out.<br>
 <h2>Installation</h2><br>
 make<br>
 ./fdf map.fdf
+![screenshot of sample](https://raw.githubusercontent.com/leikart123/portfolio/master/fdf/screen/2.png)
