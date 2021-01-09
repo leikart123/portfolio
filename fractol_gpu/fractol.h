@@ -1,76 +1,64 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hunnamab <hunnamab@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/02 14:49:49 by hunnamab          #+#    #+#             */
-/*   Updated: 2020/07/27 18:04:54 by hunnamab         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include <stdio.h>
-# include <math.h>
-# include <fcntl.h>
-# include <stdint.h>
-# include "minilibx_macos/mlx.h"
-# include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdint.h>
+#include <math.h>
+#include <fcntl.h>
+#include <stdint.h>
+#include <mlx.h>
+#include <cuda_runtime_api.h>
+#include <vector_types.h>
+#include <cuda.h>
+#include "device_launch_parameters.h"
+#include "libft/libft.h"
 
-# define WID	800
-# define HEI	800
+# define WID 1024
+# define HEI 1024
+# define threadNum 1024
+# define NumberOfPixel (WID * HEI)
+# define RED 0xa4303d
+# define JULIA_RE -0.70176
+# define JULIA_IM -0.3842
+# define MAN_RE
+# define MAN_IM
 
-# define IVORY	0xE4E4E1
-
-typedef	struct		s_cmplx
+typedef enum fractal_type
 {
-	double			re;
-	double			im;
-}					t_cmplx;
+	MANDELBROT,
+	JULIA
+}			t_fractal_type;
 
-typedef struct		s_cntrl
+typedef struct  cntrl
 {
-	void			*mlx;
-	void			*win;
-	void			*img;
-	int				*data;
-	int				bpp;
-	int				size_line;
-	int				endian;
-	char			fr_name;
-	int				j_move;
-	int				menu;
-	int				iter;
-	int				color;
-	double			zoom;
-	t_cmplx			min;
-	t_cmplx			max;
-	t_cmplx			k;
-	t_cmplx			z;
-	t_cmplx			c;
-	t_cmplx			pos;
-	t_cmplx			zbuf;
-}					t_cntrl;
+	void        *mlx;
+	void        *win;
+	void        *img;
+	int			fractal_num;
+	int         bpp;
+	int         size_line;
+	int         endian;
+	int         color;
+	int32_t     end_color;
+	float      angle;
+	float      dx;
+	float      dy;
+	float      x_pos;
+	float      y_pos;
+	int         scale;
+	int			z_max;
+	int			z_min;
+	float      zoom;
+	int			*d_data_ptr;
+	int			*h_data_ptr;
+	int			type;
+}               c_cntrl;
 
-void				error_handling(int i);
-void				draw_fractal(t_cntrl *cntrl);
-void				set_minimum(t_cntrl *cntrl);
-void				set_re_im(t_cntrl *cntrl, int x, int y);
-void				mandelbrot(t_cntrl *cntrl);
-void				flowerbrot(t_cntrl *cntrl);
-void				julia(t_cntrl *cntrl);
-void				burning_ship(t_cntrl *cntrl);
-int					colors(int i, int iter, int color);
-void				default_settings(t_cntrl *cntrl);
-int					key_mouse_control(t_cntrl *cntrl);
-void				julia_changes(t_cntrl *cntrl, int x, int y);
-void				scroll(int button, t_cntrl *cntrl, double x, double y);
-void				move(int key, t_cmplx *pos);
-void				menu_onoff(t_cntrl *cntrl);
-void				show_menu(t_cntrl *cntrl);
-void				set_flowerbrot(t_cntrl *cntrl);
+int		args_parse(int argc, char **argv, c_cntrl *cmd);
+int		key_mouse_control(c_cntrl *cntrl);
+void	mlx(c_cntrl *cntrl);
+int		key_control(int key, c_cntrl *cntrl);
 
 #endif
