@@ -1,6 +1,5 @@
 <h2>FDF for Linux</h2><br>
-![myimage-alt-tag](https://raw.githubusercontent.com/leikart123/portfolio/master/fdf/screen/D3vhTf2Qk7w-min.jpg)<br>
-<img src="https://raw.githubusercontent.com/leikart123/portfolio/master/fdf/screen/D3vhTf2Qk7w-min.jpg" width="200" height="50"/>
+<img src="https://raw.githubusercontent.com/leikart123/portfolio/master/fdf/screen/D3vhTf2Qk7w-min.jpg" width="1920" height="1110"/>
 FDF это проект, целью которого было создание из карты изображения трехмерной сетки в разных проекциях.<br>
 Карта представляет из себя текстовый фаил с расширением .fdf Каждое число в карте - это точка, значнение числа - ее высота.<br>
 Доступны две проекции - парарллельная и изометрическая, несколько расцветок для полученного изображения, вращения и перемещения объекта.<br>
