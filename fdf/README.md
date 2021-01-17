@@ -10,3 +10,5 @@ FDF это проект, целью которого было создание �
 Для сборки самой программы используйте make<br>
 <h2>Использование</h2><br>
 ./fdf map.fdf<br>
+<img src="https://raw.githubusercontent.com/leikart123/portfolio/master/fdf/screen/1.png" width="960" height="555"/>
+<img src="https://raw.githubusercontent.com/leikart123/portfolio/master/fdf/screen/3.png" width="960" height="555"/>
