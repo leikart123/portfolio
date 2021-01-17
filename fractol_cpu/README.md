@@ -1,3 +1,4 @@
+<img src="https://github.com/leikart123/portfolio/blob/master/fractol_cpu/screen/1.png" width="960" height="555"/><br>
 <h1>Fractol</h1>
 Fractol - второй проект ветки графики School 42, цель проекта - создание программы, отрисовывающей разные фракталы с использованием параллельных вычислений на процессоре.<br>
 <h2>Установка</h2>
